@@ -1,22 +1,45 @@
 {
-  "name": "discord-message-analyzer",
+  "name": "discord-message-insights",
   "version": "1.0.0",
-  "description": "Analyze Discord messages with data visualization",
-  "main": "index.js",
+  "author": "Khai Dye-Brinkman",
+  "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "pnpm run compile-sass && react-scripts start",
+    "build": "pnpm run compile-sass && react-scripts build",
+    "test": "pnpm run compile-sass && react-scripts test",
+    "eject": "pnpm run compile-sass && react-scripts eject",
+    "compile-sass": "sass sass/index.scss:src/css/index.css --style=compressed"
   },
   "dependencies": {
-    "bulma": "^0.9.4",
-    "papaparse": "^5.3.0",
-    "react": "^18.0.0",
-    "react-chartjs-2": "^4.0.0",
-    "react-dom": "^18.0.0",
+    "chart.js": "^3.9.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^3.0.4",
+    "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "bulma": "^1.0.2",
+    "eslint": "^8.19.0",
+    "eslint-plugin-react": "^7.31.8",
+    "sass": "1.78.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
 }
